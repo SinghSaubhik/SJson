@@ -1,0 +1,10 @@
+{
+    "APP": {
+        "APP_PORT": 3000
+    },
+
+    "DATABASE": {
+        "DB_HOST": "",
+        "DB_PASS": ""
+    }
+}

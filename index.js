@@ -41,7 +41,7 @@ app.post('/createapi', async (req, res) => {
 
   await hostJson.hostJsonn(pid, req.body)
 
-  res.json({ url: 'http://localhost:8080/api/' + pid })
+  res.json({ url: 'https://sjson.azurewebsites.net/api/' + pid })
 })
 
 app.get('/api/:pid', async (req, res) => {

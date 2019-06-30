@@ -7,6 +7,8 @@ const cors = require('cors')
 const hostJson = require('./HostService/hostJson.js')
 const path = require('path')
 
+const signup = require('./Authentication/auth.js')
+
 const uniqid = require('uniqid')
 const app = express()
 
@@ -27,6 +29,7 @@ mongoose.connect(
 )
 
 app.use(express.static(path.join(__dirname, 'public')))
+app.use('/user', signup)
 
 app.post('/get', (req, res) => {
   console.log(req.body)
@@ -46,6 +49,10 @@ app.get('/api/:pid', async (req, res) => {
 
   res.json(result.jsonHost)
 })
+
+/* ==================================================================================== */
+// Authentication Endpoints
+/* ===================================================================================== */
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`)
